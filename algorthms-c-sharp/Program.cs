@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using algorthms_c_sharp;
 using System.Collections;
+using System.ComponentModel.DataAnnotations;
 
 Console.WriteLine("Hello, World!");
 
@@ -47,14 +48,33 @@ int[] Reverse(int[] input)
     return res;
 }
 
-int[] myInput = { 3, 4, 5 };
+int[] myInput = { 3, 4, 5, 6,7,8};
 var res = Reverse(myInput);
 //Array.ForEach(res, Console.WriteLine);
 
 #endregion
 
 #region reverseplace
+void ReverseInPlace(int[] input)
+{
+    // 0 1 2 3 4
+    int len = input.Length;
+    int mid = len / 2;
+    for(int i = 0; i < mid; i++)
+    {
+        int temp = input[i];
+        input[i] = input[len - 1 - i];
+        input[len - 1 - i] = temp;
+    }
+}
 
+Array.ForEach(myInput,Console.Write);
+
+ReverseInPlace(myInput);
+
+Console.WriteLine("  ");
+
+Array.ForEach(myInput, Console.Write);
 
 #endregion
 
