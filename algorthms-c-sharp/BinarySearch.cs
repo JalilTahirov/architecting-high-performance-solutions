@@ -58,12 +58,10 @@ internal class BinarySearch
             if (inputArray[mid]>item)
             {
                 max = mid-1;
-                mid = (max + min) / 2;
             }
             else
             {
                 min = mid+1;
-                mid = (max + min) / 2;
             }
         }
 
