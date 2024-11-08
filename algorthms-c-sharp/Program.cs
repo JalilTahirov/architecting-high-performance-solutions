@@ -2,10 +2,13 @@
 using algorthms_c_sharp;
 using System.Collections;
 using System.ComponentModel.DataAnnotations;
+using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 
 Console.WriteLine("Hello, World!");
 
 //BinarySearch bs = new BinarySearch();
+
 #region findeven
 int[] FindEvenNumbers(int[] arr1, int[] arr2)
 {
@@ -68,16 +71,68 @@ void ReverseInPlace(int[] input)
     }
 }
 
-Array.ForEach(myInput,Console.Write);
+//Array.ForEach(myInput,Console.Write);
 
 ReverseInPlace(myInput);
 
-Console.WriteLine("  ");
+//Console.WriteLine("  ");
 
-Array.ForEach(myInput, Console.Write);
+//Array.ForEach(myInput, Console.Write);
 
 #endregion
 
+#region rotateanarray
+void RotateArray(int[] arr)
+{
+    // update the value at index by 1 for example
+    //123456 -> 234561
+    var temp = arr[0];
+    for (int i = 1; i < arr.Length; i++)
+    {
+        arr[i-1] = arr[i];
+    }
+    arr[arr.Length - 1] = temp;
 
+}
 
+int[] input = {1,2,3,4,5,6,7,8};
+
+RotateArray(input);
+//Array.ForEach(input, Console.Write);
+//Console.WriteLine();
+
+RotateArray(input);
+//Array.ForEach(input, Console.Write);
+//Console.WriteLine();
+
+RotateArray(input);
+//Array.ForEach(input, Console.Write);
+//Console.WriteLine();
+
+#endregion
+
+void DisplayFreqElements(int[] arr)
+{
+
+    Dictionary<int, int> dict = new Dictionary<int, int>();
+    foreach(int value in arr)
+    {
+        if(dict.ContainsKey(value))
+        {
+            dict[value]++;
+        }
+        else
+        {
+            dict[value] = 1;
+        }
+    }
+
+    foreach(KeyValuePair<int,int> x in dict)
+    {
+        Console.WriteLine(x.Key + " " + x.Value); 
+    }
+
+}
+
+DisplayFreqElements(new int[] {2,2,3});
 
