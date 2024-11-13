@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using algorithms_c_sharp;
 using algorthms_c_sharp;
 using System.Collections;
 using System.ComponentModel.DataAnnotations;
@@ -134,5 +135,8 @@ void DisplayFreqElements(int[] arr)
 
 }
 
-DisplayFreqElements(new int[] {2,2,3});
+//DisplayFreqElements(new int[] {2,2,3});
+
+//Twosum twosum = new Twosum();
+
 
